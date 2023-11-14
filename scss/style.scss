@@ -1,7 +1,32 @@
-@import url(css/normalize.css);
-@import url('https://fonts.googleapis.com/css2?family=Roboto');
+@import url(/css/normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
 
-html, *{
+:root {
+    --xl: 992px;
+    --md: 768px;
+    --xs: 576px;
+}
+
+.flex-row {
+    display: flex;
+    flex: 0 1 100%;
+    gap: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flex-column {
+    display: flex;
+    flex: 0 1 100%;
+    gap: 16px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+html,
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -18,6 +43,7 @@ body {
     max-height: 100%;
     font-size: 16px;
     font-family: Roboto, serif;
+    // color: #1d1d1d;
     font-style: normal;
     font-weight: 400;
 }
@@ -25,19 +51,21 @@ body {
 .container {
     padding: 0 8px;
     margin: 0 auto;
-    max-width: 942px;
+    max-width: 962px;
     height: 100%;
 }
 
-.img, .logo, img {
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-    }
+.img,
+.logo,
+img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
 
 .block-underline {
     border-bottom: 1px solid #979797;
-} 
+}
 
 .header {
     z-index: 2;
@@ -45,63 +73,63 @@ body {
     box-shadow: 0px 0px 16px rgba(38, 38, 38, 0.16);
     margin: 0 auto;
     max-width: 100%;
-        &--fixed{
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0; 
-        }
+    &--fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
 
-        &__inner {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 8px;
-        }
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 8px;
+    }
 
-		&__buttons {
-            display: flex;
-            align-items: center;
-        }
+    &__buttons {
+        display: flex;
+        align-items: center;
+    }
 
-		&__in {
-            border: 1px solid #e0e0e0;
-            border-radius: 2px;
-            background-color: #fff;
-            font-size: 13px;
-            font-weight: 500;
-            text-align: center;
-            width: 78px;
-            height: 40px;
-            margin: 16px 8px;  
-            @media (min-width:576px) {
-                margin: 16px;
-            }
+    &__in {
+        border: 1px solid #e0e0e0;
+        border-radius: 2px;
+        background-color: #fff;
+        font-size: 13px;
+        font-weight: 500;
+        text-align: center;
+        width: 78px;
+        height: 40px;
+        margin: 16px 8px;
+        @media (min-width: 576px) {
+            margin: 16px;
         }
+    }
 
-        &__basket {
-            display: none;
-            @media (min-width: 576px) {
-                display: block;
-                padding: 10px;
-            }
+    &__basket {
+        display: none;
+        @media (min-width: 576px) {
+            display: block;
+            padding: 10px;
         }
+    }
 }
 
 .search {
     border-bottom: 1px solid #757575;
     opacity: 0.5;
-		&__form {
-            margin: 55px+72px auto 55px;
-        }
-        &__food {
-            border: none;
-            font-size: 16px;
-            line-height: 25px;
-            width: 100%;
-            color: #626262;        
-        }
+    &__form {
+        margin: 55px+72px auto 55px;
+    }
+    &__food {
+        border: none;
+        font-size: 16px;
+        line-height: 25px;
+        width: 100%;
+        color: #626262;
+    }
 }
 
 .title {
@@ -119,7 +147,6 @@ body {
     }
 }
 
-
 .restorans {
     display: flex;
     flex: 0 1 auto;
@@ -127,13 +154,13 @@ body {
     gap: 16px;
     flex-wrap: wrap;
     max-width: 100%;
-    &__card{
+    &__card {
         flex: 0 1 100%;
         gap: 16px;
         flex-wrap: wrap;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        // object-fit: cover;
         @media (min-width: 576px) {
             flex: 0 1 48%;
         }
@@ -149,11 +176,11 @@ body {
         height: 256px;
         object-fit: cover;
     }
-    &__img{
+    &__img {
         width: 100%;
         height: 100%;
     }
-    
+
     &__title {
         max-width: 100%;
         margin: 16px 0 4px;
@@ -169,63 +196,65 @@ body {
         line-height: 21px;
         padding-bottom: 20px;
     }
+    &:hover {
+        background: #979797;
+        background-color: rgba(117, 117, 117, 0.04);
+        // flex-basis: 100%;
+    }
 }
 
 .active {
-    background: #979797;
-    background-color: rgba(117, 117, 117, 0.04);
+    // background: #979797;
+    // background-color: rgba(117, 117, 117, 0.04);
     flex-basis: 100%;
-    // &:active {
-    //     background: #000;
-    // }
 }
 
 .footer {
     background: #262626;
     max-width: 100%;
     color: #fff;
-		&__logo {
-            padding: 56px 0 40px;
+    &__logo {
+        padding: 56px 0 40px;
+    }
+    &__links {
+        padding: 32px 0 40px;
+    }
+    &__download {
+        display: flex;
+        flex: 1 2 50%;
+        gap: 1.6rem;
+        @media (min-width: 768px) {
+            gap: 2.5rem;
         }
-        &__links {
-            padding: 32px 0 40px;
-        }
-        &__download {
+        justify-content: center;
+        padding: 24px 0;
+    }
+    &__rights {
+        padding: 40px 0;
+        @media (min-width: 768px) {
             display: flex;
-            flex: 1 2 50%;
-            gap: 1.6rem;
-            @media (min-width: 768px) {
-                gap: 2.5rem;
-            }
-            justify-content: center;
-            padding: 24px 0;
+            flex: 0 1 auto;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-right: 96px;
         }
-        &__rights {
-            padding: 40px 0;
-            @media (min-width: 768px) {
-                display: flex;
-                flex: 0 1 auto;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                margin-right: 96px;
+        p {
+            margin: 24px 0;
+            font-size: 13px;
+            &:first-child {
+                margin: 0;
             }
-            p{
-                margin: 24px 0;
-                font-size: 13px;
-                &:first-child {
-                    margin: 0;
-                }
-                &:last-child {
-                    margin: 0;
-                }
-                @media (min-width: 768px) {
-                    margin: 0;
-                }
+            &:last-child {
+                margin: 0;
+            }
+            @media (min-width: 768px) {
+                margin: 0;
             }
         }
+    }
 }
 
-.footer-links{
+.footer-links {
     display: flex;
     flex-direction: column;
     @media (min-width: 768px) {
@@ -237,7 +266,7 @@ body {
 .language {
     display: flex;
     flex: 0 0 auto;
-    background: #3B3B3B;
+    background: #3b3b3b;
     border-radius: 2px;
     color: #fff;
     height: 2.5rem;
@@ -247,28 +276,27 @@ body {
         width: 14rem;
     }
 
-
-		&__icon-word {
-            margin: 4px 8px;
-            img {
-                max-width: 100%;
-                max-height: 100%;
-            }
+    &__icon-word {
+        margin: 4px 8px;
+        img {
+            max-width: 100%;
+            max-height: 100%;
         }
-        &__select {
-            position: relative;
-            color: #fff;
-            outline: none;
-            border: none;
-            appearance: none;
-            font-size: 13px;
-            line-height: 16px;
-            padding-right: 48%;
-            background: url(../img/icons/arrow-back.svg) right no-repeat #3B3B3B;
-            @media (min-width: 992px) {
-                padding-right: 60%;
-            }
+    }
+    &__select {
+        position: relative;
+        color: #fff;
+        outline: none;
+        border: none;
+        appearance: none;
+        font-size: 13px;
+        line-height: 16px;
+        padding-right: 48%;
+        background: url(../img/icons/arrow-back.svg) right no-repeat #3b3b3b;
+        @media (min-width: 992px) {
+            padding-right: 60%;
         }
+    }
 }
 
 .social {
@@ -286,30 +314,186 @@ body {
     }
 }
 .green-text {
-    color: #49A144;
+    color: #49a144;
 }
 .nav {
     padding-top: 7px;
     &__text {
         font-size: 0.8125rem;
         margin-bottom: 1.44rem;
-        &:last-child{
+        &:last-child {
             margin-bottom: 0;
         }
     }
 }
 
 .button-up {
-    &__btn{
+    &__btn {
         position: fixed;
         bottom: 24px;
         right: 16px;
         max-width: 64px;
         max-height: 64px;
-        // object-fit: cover;
         @media (min-width: 768px) {
             max-width: 100%;
             max-height: 100%;
+        }
+    }
+}
+
+// second page
+.wrapped {
+    margin-top: 72px;
+    background: #fff;
+}
+.banner {
+    background: url("../img/Restaurant/banner\ -\ xs.png") center center / cover no-repeat;
+    height: 255px;
+    padding-top: 130px;
+    &__card {
+        padding: 24px 38px;
+        max-width: 308px;
+        min-height: 180px;
+        background-color: #fff;
+        filter: drop-shadow(0px 0px 16px rgba(117, 117, 117, 0.2));
+    }
+    &__title {
+        text-align: center;
+        color: #1d1d1d;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    &__discription {
+        margin: 0 auto;
+        color: #626262;
+        font-size: 14px;
+        line-height: normal;
+    }
+    &__delivery-time {
+        color: #fff;
+        text-align: center;
+        font-size: 12px;
+        line-height: normal;
+        line-height: 32px;
+    }
+    &__btn {
+        margin: 0 auto;
+        width: 98px;
+        height: 32px;
+        border-radius: 20px;
+        background: #262626;
+    }
+    @media (min-width: 768px) {
+        background: url("../img/Restaurant/banner\ -\ md.png") center center / cover no-repeat;
+        height: 364px;
+        padding-top: 80px;
+        &__card {
+            padding: 38px;
+            max-width: 389px;
+            min-height: 204px;
+        }
+        &__discription {
+            margin: 0;
+            line-height: 32px;
+        }
+        &__btn {
+            margin: 0;
+        }
+    }
+}
+
+.menu-nav {
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+        line-height: 80px;
+        border-bottom: 1px solid rgba(117, 117, 117, 0.2);
+        a {
+            margin-right: 40px;
+            color: #626262;
+            &:hover {
+                color: #327430;
+            }
+        }
+    }
+}
+
+.menu {
+    background: #fff;
+    margin: 0 auto 40px;
+    &__title {
+        margin: 56px auto;
+        h3 {
+            text-align: center;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 34px; /* 154.545% */
+        }
+    }
+    &__br {
+        margin: -44px auto 44px;
+        background: #000;
+        fill: #757575;
+        width: 50px;
+        height: 1px;
+    }
+
+    &__card {
+        display: flex;
+        flex: 1 1 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        max-height: 160px;
+        border-bottom: 1px solid rgba(117, 117, 117, 0.2);
+        &:hover {
+            background: rgba(117, 117, 117, 0.04);
+        }
+    }
+    &__discription {
+        margin: 0 0 16px;
+        display: flex;
+        flex: 0 1 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 14px;
+        line-height: 24px; /* 171.429% */
+    }
+    &__image {
+        max-height: 32vw;
+        max-width: 32vw;
+    }
+    &__img {
+        border-radius: 1px;
+        flex: 0 1 auto;
+        fill: #d8d8d8;
+        object-fit: fill;
+    }
+    @media (min-width: 576px) {
+        &__title {
+            margin-bottom: 32px;
+        }
+        &__br {
+            display: none;
+        }
+        margin: 0 auto 32px;
+        &__discription {
+            margin: 16px 24px;
+        }
+        &__card {
+            margin-bottom: 16px;
+            height: 160px;
+            border: 1px solid rgba(117, 117, 117, 0.2);
+        }
+    }
+    @media (min-width: 992px) {
+        margin: 0 auto 47px;
+        &__card {
+            margin-bottom: 33px;
+            flex: 0 1 49%;
+            border: 1px solid rgba(117, 117, 117, 0.2);
         }
     }
 }
